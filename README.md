@@ -10,5 +10,5 @@
     --source . \
     --region us-central1 \
     --port 8501 \
-    --service-account=my-jira-sa@ka-jira.iam.gserviceaccount.com
+    --service-account=[your_sa]
     --allow-unauthenticated
