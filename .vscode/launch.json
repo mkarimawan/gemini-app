@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Cloud Run: Run/Debug Locally",
+            "type": "cloudcode.cloudrun",
+            "request": "launch",
+            "build": {
+                "buildpacks": {
+                    "path": "src/requirements.txt",
+                    "builder": "gcr.io/buildpacks/builder:v1"
+                }
+            },
+            "image": "gemini-app",
+            "service": {
+                "name": "gemini-app",
+                "containerPort": 8501,
+                "serviceAccountName": "my-jira-sa@ka-jira.iam.gserviceaccount.com",
+                "resources": {
+                    "limits": {
+                        "memory": "256Mi"
+                    }
+                }
+            },
+            "target": {
+                "minikube": {}
+            },
+            "watch": true
+        }
+    ]
+}
